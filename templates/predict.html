@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>House Price Prediction</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+        }
+        form {
+            text-align: center;
+            border: 1px solid #ccc;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px #aaa;
+            margin-top: 20px;
+        }
+        input[type="text"] {
+            margin: 5px;
+            padding: 5px;
+            width: 150px;
+        }
+        input[type="submit"] {
+            padding: 5px 15px;
+            margin-top: 10px;
+        }
+        h3 {
+            margin-top: 20px;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <form method="POST">
+        <h2>Predict House Price</h2>
+        Bedrooms: <input type="text" name="bedrooms" value="{{ bedrooms }}"><br>
+        Bathrooms: <input type="text" name="bathrooms" value="{{ bathrooms }}"><br>
+        Area: <input type="text" name="area" value="{{ area }}"><br>
+        Floors: <input type="text" name="floors" value="{{ floors }}"><br>
+        Year Built: <input type="text" name="yearbuilt" value="{{ yearbuilt }}"><br>
+        Parking: <input type="text" name="parking" value="{{ parking }}"><br>
+        Lot Size: <input type="text" name="lotsize" value="{{ lotsize }}"><br>
+        Distance: <input type="text" name="distance" value="{{ distance }}"><br>
+        Location: <input type="text" name="location" value="{{ location }}"><br>
+        Nearby: <input type="text" name="nearby" value="{{ nearby }}"><br>
+        House Type: <input type="text" name="housetype" value="{{ housetype }}"><br>
+        Condition: <input type="text" name="condition" value="{{ condition }}"><br>
+        Amenity: <input type="text" name="amenity" value="{{ amenity }}"><br>
+        <input type="submit" value="Predict">
+    </form>
+
+    {% if price %}
+        <h3>Predicted Price: {{ price }}</h3>
+    {% endif %}
+</body>
+</html>
